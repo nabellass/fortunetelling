@@ -1,27 +1,18 @@
-//use switch to get random result
-
 const btn = document.getElementById('button');
+const result = document.getElementById('result');
+
+const card = ['Wonderfull!! This is Gonna be Your Day!!', 'Try Again Tomorrow and Good Luck', 'It Is The Worst. Be Strong.'];
+
+function getRandom() {
+  const array = [0,0,0,1,1,1,2,2,2];
+  const randomArray = array[Math.floor(Math.random()* array.length)];
+  
+  return randomArray;
+}
+
 
 //show result
 btn.addEventListener('click', () => {
-  const getResult = document.createElement('p');
-  const divResult = document.getElementById('result');
-
-  // get random pick from array
-  const array = [1,1,2,2,2,3,3,3,3,3];
-  const randomArray = array[Math.floor(Math.random()* array.length)];
-  
-  switch (randomArray) {
-    case 1:
-        getResult.innerHTML = 'Wonderfull!! This is Gonna be Your Day!!';
-        break;
-    case 2:
-        getResult.innerHTML = 'Try Again Tomorrow and Good Luck';
-        break;
-    default:
-        getResult.innerHTML = 'It Is The Worst. Be Strong.';
-        break;
-  }
-  
-  divResult.append(getResult);
+  const index = getRandom();
+  result.innerText = card[index];
 });
