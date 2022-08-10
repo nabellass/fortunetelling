@@ -1,3 +1,5 @@
+//pick random result from array
+
 const btn = document.getElementById('button');
 const result = document.getElementById('result');
 
@@ -9,7 +11,6 @@ function getRandom() {
   
   return randomArray;
 }
-
 
 //show result
 btn.addEventListener('click', () => {
